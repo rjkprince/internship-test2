@@ -1,9 +1,12 @@
 const fs = require("fs").promises;
+const path = require("path");
 
 const solution = async () => {
   try {
     const csvString = (
-      await fs.readFile("/input/question-1/main.csv")
+      await fs.readFile(
+        path.resolve(__dirname, "../../input/question-1/main.csv")
+      )
     ).toString();
     const lines = csvString.split("\n");
     let csvStrOut = "";
@@ -23,13 +26,12 @@ const solution = async () => {
       }
       sumVal.splice(0, 2);
       csvStrOut += `${startYear},${parseInt(
-        lines[i].split(",")[1]
+        lines[i - 1].split(",")[1]
       )},${sumVal.join(",")}\n`;
-      i++;
     }
-    await fs.writeFile("/output/answer-1/main.csv", csvStrOut);
+    await fs.writeFile(path.resolve(__dirname, "./main.csv"), csvStrOut);
   } catch (e) {
-    console.log("Error, " + e.message);
+    console.log("Error, " + e);
   }
 };
 
