@@ -10,7 +10,7 @@ const solution = async () => {
     ).toString();
     const lines = csvString.split("\n");
     let csvStrOut = "";
-    csvStrOut += lines[0] + "\n";
+    csvStrOut += `,${lines[0].split(",").slice(1).join(",")}\n`;
     let i = 1;
     while (i < lines.length) {
       let entities = lines[i].split(",");
