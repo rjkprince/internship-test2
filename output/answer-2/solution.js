@@ -51,3 +51,5 @@ const solution = async () => {
 };
 
 solution();
+
+module.exports = solution;

@@ -4,7 +4,7 @@
   "description": "Problem statement is defined in the file \"Bungee Coding Round.docx\". Please refer to this file.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "solve": "node index.js"
   },
   "repository": {
     "type": "git",
